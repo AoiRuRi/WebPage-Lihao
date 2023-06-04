@@ -1,0 +1,229 @@
+  
+* {
+    box-sizing: border-box; /*將寬高設定作用在邊框外緣的範圍內*/
+}
+body {
+  font-family:"Noto Sans CJK TC", "Microsoft JhengHei", PingFang, STHeiti, sans-serif, serif;
+  margin: 0;
+}
+
+/*頁首LOGO設定*/
+.logo {
+  margin-left: 100px; /*LOGO圖距離頁面左邊框的距離,越大離越遠*/
+  margin-right: 750px;  
+}
+nav {
+      display: flex;
+      font-size: 20px; /*導覽列字體大小*/
+      background-color: white;
+      text-decoration: none; /*移除超連結底線*/
+}
+nav a {  /*導覽列超連結設定*/
+  color: 		#F75000;
+  background-color: #ADFEDC;
+  padding: 10px;
+  text-align: right;
+  text-decoration: none;
+}  
+nav a:hover { /*導覽列滑鼠移過超連結設定*/
+  color: #004B97;
+  background-color: #CECEFF;
+  text-decoration: none;
+}
+.navbar {   /*頁首及導覽列區塊設定*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0px;/*最上方頁首位置完全置頂遮蓋，避免產生一條透明的區域，會看到下方頁面捲上去後的內容，以下左右也做遮蓋*/
+  right: 0px;
+  left: 0px;
+  z-index: 9999; /*最上方頁首圖層置頂，避免網頁往下滑時被其他圖片遮蓋*/
+  padding: 10px;
+}
+
+/*頁面標題列設定*/
+.catalog {
+  display: flex;
+  width: 1900px;
+  height: 350px;
+  padding: 15px;
+  background-image: url("../img/heart.png");
+  background-size: cover;
+  margin-bottom: 5px;
+  overflow:hidden;
+  animation: fade 2s linear 0s infinite;
+  animation-iteration-count: 1;
+}
+@keyframes fade {
+  from {
+      opacity: 0;
+      
+  }
+  to {
+      opacity: 1;
+
+  }
+}
+
+.ca-text { /*頁面標題列文字設定*/
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 40px;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, -190%);
+	text-align: center;
+  }
+
+/*公司許可證圖片設定(關於我們左欄)*/
+.license {
+  flex: 2;
+  margin-left: 200px;
+  margin-top: 5px;
+  overflow:hidden;
+}
+
+/*公司許可證文字設定*/
+.license p {  
+  margin-left: 250px;
+}
+
+/* 設定大圖的底圖層*/
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;   /*網頁載入時設為隱藏*/
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/*大圖顯示設定*/
+.overlay img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: auto;
+  border: 5px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/*右上角叉叉關閉按鈕的設定*/
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+/*公司簡介文字(關於我們右欄)*/
+.Comtext {
+  flex: 2;
+  background-color: #fff;
+  padding: 90px;
+  margin-right: 200px;
+  margin-top: 10px;
+  overflow:hidden;
+}
+
+h3 {
+  padding: 0.25em 1em;
+  text-align: center;
+  color: #fff;
+  border: solid 1.5px #F75000;
+  background: 	#F75000;
+}
+h4 {
+  padding: 0.25em 1em;
+  text-align: center;
+  color: #fff;
+  border-bottom: 2px solid transparent;
+  background:
+  linear-gradient(to right, blue, blue) -10%,
+  linear-gradient(to right, orange, orange) 30%,
+  linear-gradient(to right, yellow, yellow) 65%,
+  linear-gradient(to right, green, green) 100%;
+  background-size:
+  33%, 34% 100%,
+  34% 100%, 33%;
+  background-repeat: no-repeat;
+  padding: 0.25em 1em;
+  text-align: center;
+  color: #fff;
+}
+
+/*連絡資訊左欄*/
+#sidebar_left{
+  width:600px;
+  height:300px;
+  text-align:center;
+  line-height:400px;
+  float:left;
+}
+.logo2 {
+  position: relative;
+  left: 160px;
+  width:180px;
+  height:100px;
+  top: -120px;
+}
+/*連絡資訊中欄*/
+#content{
+  margin-left:710px;
+  margin-right:700px;
+  height:300px;
+  text-align:center;
+  line-height:400px;
+}
+
+P {
+  font-size: 1rem;
+  text-align: justify;
+  line-height:24px;
+}
+
+/*連絡資訊右欄*/
+#sidebar_right{
+  width:600px;
+  height:300px;
+  margin-right:200px;
+  margin-left:500px;
+  text-align:center;
+  line-height:400px;
+}
+
+.locate {
+  position: relative;
+  left: -110px;
+  width:400px;
+  height:300px;
+  bottom: 200px;
+}
+
+/*頁尾*/
+footer {
+  padding: 50px;
+  text-align: center;
+}
+footer a {  
+  color: #050505;
+  padding: 10px;
+  text-align: center;
+}  
+footer a:hover { 
+  color: blue;
+}
+
+/*右下角TOP按鈕設定*/
+.goTop {
+  display: none;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+}
