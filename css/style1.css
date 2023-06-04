@@ -73,7 +73,6 @@ nav a:hover { /*導覽列滑鼠移過超連結設定*/
   margin-bottom: 10px;
   width:35%;
   transform: translateX(-20%);
-  display: none;
 }
 
 /*ABOUT US區塊右*/
