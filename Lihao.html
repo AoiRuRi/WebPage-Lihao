@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="img/logoicon.ico" rel="shortcut icon"/>  
     <title>立豪國際有限公司</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <div class="navbar"></div>  <!--以下為頁首部份-->
     <style>
@@ -25,11 +26,11 @@
         <img class="logo" src="img/logo.png">
     <nav>
         <a href="Lihao.html"><i class="fa-solid fa-house-user fa-fw"></i>首頁</a>    
-        <a href="#"><i class="fa-solid fa-face-smile"></i>關於我們</a>
-        <a href="#"><i class="fa-solid fa-handshake fa-fw"></i>申請資訊</a>
-        <a href="#"><i class="fa-sharp fa-regular fa-newspaper"></i>最新消息</a>
-        <a href="#"><i class="fa-sharp fa-solid fa-folder-open"></i>相關下載</a> 
-        <a href="#"><i class="fa-solid fa-circle-question"></i>Q&A</a>                     
+        <a href="Aboutus.html"><i class="fa-solid fa-face-smile"></i>關於我們</a>
+        <a href="Apply.html"><i class="fa-solid fa-handshake fa-fw"></i>申請資訊</a>
+        <a href="News.html"><i class="fa-sharp fa-regular fa-newspaper"></i>最新消息</a>
+        <a href="Download.html"><i class="fa-sharp fa-solid fa-folder-open"></i>相關下載</a> 
+        <a href="Q&A.html"><i class="fa-solid fa-circle-question"></i>Q&A</a>                     
     </nav>
 </header> 
     <div class="slidershow"></div> <!--以下為輪播圖-->
@@ -59,11 +60,11 @@
       <span class="visually-hidden">Next</span>
     </button>
     </div>
+    
 <section class="row"> <!--以下為About Us區塊-->
     <div class="about">
-        <img src="img/abountus.jpg" width="90%">
-        <div class="aboutline">
-        </div>
+        <img src="img/abountus.jpg">
+        <img src="img/caregiver.jpg">
     </div>
     <div class="column text">
         <h1>ABOUT US</h1><br><br>
@@ -76,13 +77,13 @@
     </div>
 </section> 
 
-<section> <!--以下為最新消息區塊-->
+<section> <!--以下為政令宣導區塊-->
     <div class="column news">
         <div class="bg-white-opacity">
             <h2>
                 <pre>
                    
-               <span style="font-size:34px"><strong>— 最 新 消 息 —                        — 相 關 連 結 —</strong> 
+               <span style="font-size:34px"><strong>— 政 令 宣 導 —                        — 相 關 連 結 —</strong> 
      
     <span style="font-size:26px"><strong><a href="https://www.lihau.com.tw/content-71.html"target="_blank"><i class="fa-solid fa-file-invoice"></i> 【少一份毒品，多一分健康】–多國語</a>                          <a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=N0090001"target="_blank"><i class="fa-solid fa-link"></i>  全國法規資料庫</strong></span></a>
                                                  <span style="font-size:26px"><strong><a href="https://ilabor.ntpc.gov.tw/"target="_blank"><i class="fa-solid fa-link"></i>  新北勞動雲</strong></span></a>
@@ -108,7 +109,7 @@
             </style>
             <p><span style="font-size:16px"><img src="img/phone.png" width="5%">電話：02-2211-5050</span></p>
             <p><span style="font-size:16px"><img src="img/time.png" width="5%">營業時間：9:00~17:30(午休時間12:00~13:30)</span></p>
-            <p><span style="font-size:16px"><img src="img/point.png" width="5%">地址：<a href="https://goo.gl/maps/HDVKeTfeXNjnUbCM6" target="_blank">新北市新店區安興路105號10樓之6(陽光PARK社區)</span></p>
+            <p><span style="font-size:16px"><img src="img/point.png" width="5%">地址：<a href="https://goo.gl/maps/HDVKeTfeXNjnUbCM6" target="_blank">新北市新店區安興路105號10樓之6(陽光PARK社區)</a></p></span>
         <div id="sidebar_right"><img src="img/locate.jpg" class="locate">
         </div>
 </section>
@@ -133,8 +134,58 @@
         n:0	//指定起始的數字
         }));</script>
         <!-- 計數器原始碼結束 -->
-        </h6>
+      </h6>
 </footer>
+
+<!--以下是載入網頁後會跳出歡迎視窗-->
+<script>
+  window.onload = function() {
+    alert("歡迎光臨本公司！");
+  };
+</script>
+
+<!--以下是About US區塊左邊的輪播圖-->
+<script>
+$('.about').each(function () {
+
+  let slideImgs = $(this).find('img'),
+      slideImgsCount = slideImgs.length,
+      currentIndex = 0;
+
+  slideImgs.eq(currentIndex).fadeIn();
+
+  setInterval(showNextSlide, 2000);
+
+  function showNextSlide() {
+      let nextIndex = (currentIndex + 1) % slideImgsCount;
+      console.log(nextIndex)
+      slideImgs.eq(currentIndex).fadeOut();
+      slideImgs.eq(nextIndex).fadeIn();
+      currentIndex = nextIndex;
+  }
+})
+</script>
+
+<!--以下是右下角TOP按鈕按了網頁就往上捲功能-->
+<div class="goTop">
+  <img src="img/icon_top.png">
+</div>
+
+<script>
+$(function(){
+	   $(".goTop").click(function(){	    //按下top的事件處理
+		jQuery("html,body").animate({scrollTop:0},80);
+	});
+	$(window).scroll(function() {     //下滑到300時，就出現top按鈕
+		  if ( $(this).scrollTop() > 300){
+			$('.goTop').fadeIn();
+		  } else {
+			$('.goTop').fadeOut();
+		  }
+	});
+});
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 </body>
 </html>
