@@ -152,9 +152,9 @@ $('.about').each(function () {
       slideImgsCount = slideImgs.length,
       currentIndex = 0;
 
-  slideImgs.eq(currentIndex).fadeIn();
+  slideImgs.eq(currentIndex).fadeIn();  //指定當前的圖淡入顯示
 
-  setInterval(showNextSlide, 2000);
+  setInterval(showNextSlide, 2000);  //每隔2秒執行換圖，也就是當前的圖消失，換下一張出現
 
   function showNextSlide() {
       let nextIndex = (currentIndex + 1) % slideImgsCount;
